@@ -8,7 +8,7 @@ require_once __DIR__ . '/RouteNotFound.php';
 class Router
 {
     private array $routes;
-    public function register(string $route, callable|array $action):self
+    public function register(string $route/**for path */, callable|array $action/**for function */):self
     {
         // echo "<br>".$this->routes;
         $this->routes['/arpitPHP/phpstudy/oops_in_php/14_serverSupergloble' . $route] = $action;
