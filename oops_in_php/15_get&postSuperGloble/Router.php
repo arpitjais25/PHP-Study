@@ -45,6 +45,10 @@ class Router
         // }
         // echo $route;
         $action = $this->routes[$requestMethod][$route] ?? null;
+        //yaha per kya hua hai ki pahile chack karo ki $this->routes array me jo pahile globle set hua tha uske 
+        // array kye [$requestMethod][$route] per agar koi callaable function set hai to use resolve method ke 
+        //$action me save kar do agar kye ki value same hai to
+        //--yad rahko ki ye dono $action alag alag hai
         // var_dump($action);
         // echo "<br>";
         // echo "<br>";

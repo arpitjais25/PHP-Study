@@ -74,7 +74,7 @@ class InvoiceController{
         http://localhost/arpitPHP/phpstudy/oops_in_php/15_get&postSuperGloble/getandpost/create
         //dekho koi store method hai
         // qki store method usi url per hai jo post method ka use kar rahi hai aur post method me hamne store 
-        //method ko callm kiya hhai
+        //method ko call kiya hai
     }
 }
 ?>
