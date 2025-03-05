@@ -1,8 +1,13 @@
 <?php
 namespace App\Controller;
+
+use app\View;
 class HomeController{
     public function index(){
-        echo "bhag bhag!!";
+        return (new View('index'))->render();
+    }
+    public function home(){
+        echo "home!!";
     }
 }
 
