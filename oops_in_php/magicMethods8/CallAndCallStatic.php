@@ -13,7 +13,9 @@ class CallAndCallStatic{
     public function __call(string $method, array $arguments):void{
         var_dump($method, $arguments);
         if(method_exists($this, $method)){
-            call_user_func_array([$this, $method]/*yaha per bataya gaya hai kis Method ko call kiya jana hai aur vah kiska object hai esme array ka priyog es liye kiya gay hai qki yah ek hi refrence me rahega samjhna bhi asan hoga*/, $arguments);
+            call_user_func_array([$this, $method]/*yaha per bataya gaya hai kis Method ko call kiya jana hai aur
+            // vah kiska object hai esme array ka priyog es liye kiya gay hai qki 
+            // yah ek hi refrence me rahega samjhna bhi asan hoga*/, $arguments);
         }
     }
     // 3.
