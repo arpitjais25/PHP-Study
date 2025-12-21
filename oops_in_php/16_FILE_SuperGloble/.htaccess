@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /arpitPHP/phpstudy/oops_in_php/16_FILE_SuperGloble/
+RewriteBase /arpitPHP/PHP-Study/oops_in_php/16_FILE_SuperGloble/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]

@@ -32,5 +32,6 @@ $router
     ->get('/getandpost/create',[InvoiceController::class, 'create'])
     ->post('/getandpost/create',[InvoiceController::class, 'store']);
  $router->resolve($_SERVER['REQUEST_URI'],strtolower($_SERVER['REQUEST_METHOD']));
+ echo $_SERVER['REQUEST_URI'];
 
 ?>

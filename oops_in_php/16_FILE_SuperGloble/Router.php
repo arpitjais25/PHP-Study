@@ -4,21 +4,26 @@ namespace Oops_in_php\FILE_SuperGloble;
 class Router{
     private array $routes;
     public function register(string $route, callable|array $action){
-        $this->routes['/arpitPHP/phpstudy/oops_in_php/16_FILE_SuperGloble'.$route] = $action;
-        // echo $route."<br>register Runed";
+        $this->routes['/arpitPHP/PHP-Study/oops_in_php/16_FILE_SuperGloble'.$route] = $action;
+        echo $route."<br>register Runed";
         return $this;
     }
     public function resolve(string $requestUri){
+        echo "<br>resolve Runed<br>";
+        var_dump($requestUri);
         $requestUri=explode('?',$requestUri)[0];
+        echo "<br>";
+        print_r( $this->routes['/arpitPHp/PHP-Study/oops_in_php/16_FILE_SuperGloble/form']);
         $action = $this->routes[$requestUri] ?? null;
         echo $requestUri."<br>resolve runed<br>";
-        // var_dump($action);
+        var_dump($action);
         if(!$action){
-            // print_r($action);
+            
             echo "<br>somthing Wrong!";
-        }elseif(is_array($action)){
+        }
+        elseif(is_array($action)){
             [$class, $method]=$action;
-            var_dump($action);
+            // var_dump($action);
             if(class_exists($class)){
                 $classObj= new $class();
                 if(method_exists($classObj,$method)){

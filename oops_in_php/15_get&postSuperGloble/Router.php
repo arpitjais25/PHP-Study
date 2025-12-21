@@ -10,10 +10,23 @@ class Router
     private array $routes;
     public function register(string $requestMethod, string $route/**for path */, callable|array $action/**for function */):self
     {
+        echo "<pre>";
+        var_dump($requestMethod);
+        echo "<pre>";
+        echo "<pre>";
+        var_dump($route);
+        echo "<pre>";
+        echo "<pre>------------------------------";
+        var_dump($action);
+        echo "<pre>";
 
-        $this->routes[$requestMethod][dirname($_SERVER['SCRIPT_NAME']) . $route] = $action;
+        $this->routes[$requestMethod][dirname($_SERVER['SCRIPT_NAME']) . $route]= $action ;
+        echo "<pre>uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu";
+        var_dump($this->routes);
+        echo "<pre>";
         return $this;
     }
+
     public function get(string $get_route/**for path */, callable|array $get_action/**for function */):self
     {
 
@@ -24,11 +37,15 @@ class Router
 
         return $this->register('post', $post_route, $post_action);
     }
+
     public function resolve(string $requestUri, string $requestMethod)
     {   
-        // echo "<pre>";
-        // echo $requestUri;
-        // echo "<pre>";
+        echo "<pre>";
+        echo $requestUri;
+        echo "<pre>";
+        echo "<pre>";
+        echo $requestMethod;
+        echo "<pre>";
         // echo "<br>";
         // echo "<br>";
 
@@ -43,7 +60,11 @@ class Router
         //     }
 
         // }
-        // echo $route;
+        echo $route;
+        echo "<pre>rrrrrrrrrrrrrrrrrrrrrrrrrr";
+        var_dump($this->routes);
+        echo "<pre>";
+
         $action = $this->routes[$requestMethod][$route] ?? null;
         //yaha per kya hua hai ki pahile chack karo ki $this->routes array me jo pahile globle set hua tha uske 
         // array kye [$requestMethod][$route] per agar koi callaable function set hai to use resolve method ke 
@@ -87,5 +108,6 @@ class Router
 
 
     }
+
 }
 ?>
